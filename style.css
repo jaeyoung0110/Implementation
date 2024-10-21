@@ -1,0 +1,56 @@
+body {
+  margin: 100px;
+}
+
+#primary {
+  border: 0;
+  display: inline-block;
+  padding: 4px 15px;
+  line-height: 22px;
+  color: white;
+  background-color: #1677ff;
+  border-radius: 4px;
+  position: relative;
+}
+
+#primary:hover {
+  background-color: #4096ff;
+  cursor: pointer;
+}
+
+#primary:active {
+  animation: activeAnimate 0.2s linear forwards;
+}
+
+span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: animate 0.5s ease-out forwards;
+}
+
+@keyframes animate {
+  0% {
+    border: #4096ff 1px solid;
+    border-radius: 5px;
+    opacity: 0.4;
+  }
+  100% {
+    border: #4096ff 8px solid;
+    border-radius: 12px;
+    opacity: 0;
+  }
+}
+
+@keyframes activeAnimate {
+  0% {
+    background-color: #4096ff;
+  }
+  100% {
+    background-color: #0958d9;
+  }
+}
