@@ -1,25 +1,94 @@
 body {
+  box-sizing: border-box;
   margin: 100px;
 }
 
-#primary {
-  border: 0;
-  display: inline-block;
+button {
+  position: relative;
+  border-radius: 4px;
   padding: 4px 15px;
   line-height: 22px;
-  color: white;
+  font-size: 14px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.primary {
+  border: 0;
   background-color: #1677ff;
-  border-radius: 4px;
-  position: relative;
+  color: white;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: #4096ff;
+  }
+  &:active {
+    background-color: #0958d9;
+  }
 }
 
-#primary:hover {
-  background-color: #4096ff;
-  cursor: pointer;
+.default {
+  border: 1px solid rgb(217, 217, 217);
+  background-color: #ffffff;
+  transition-property: color, border-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    border-color: #4096ff;
+    color: #4096ff;
+  }
+  &:active {
+    border-color: #0958d9;
+    color: #0958d9;
+  }
 }
 
-#primary:active {
-  animation: activeAnimate 0.2s linear forwards;
+.dashed {
+  border: 1px dashed rgb(217, 217, 217);
+  background-color: #ffffff;
+  transition-property: color, border-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    border-color: #4096ff;
+    color: #4096ff;
+  }
+  &:active {
+    border-color: #0958d9;
+    color: #0958d9;
+  }
+}
+
+.text {
+  border: 0;
+  background-color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+  &:active {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.link {
+  border: 0;
+  background-color: #ffffff;
+  color: #1677ff;
+  transition-property: color;
+  transition-duration: 0.3s;
+
+  &:hover {
+    color: #4096ff;
+  }
+  &:active {
+    color: #0958d9;
+  }
 }
 
 span {
@@ -30,10 +99,10 @@ span {
   height: 100%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  animation: animate 0.5s ease-out forwards;
+  animation: btnRipple 0.5s ease-out forwards;
 }
 
-@keyframes animate {
+@keyframes btnRipple {
   0% {
     border: #4096ff 1px solid;
     border-radius: 5px;
@@ -43,14 +112,5 @@ span {
     border: #4096ff 8px solid;
     border-radius: 12px;
     opacity: 0;
-  }
-}
-
-@keyframes activeAnimate {
-  0% {
-    background-color: #4096ff;
-  }
-  100% {
-    background-color: #0958d9;
   }
 }
